@@ -1,0 +1,11 @@
+Prof :	Ioana Manolescu ioana.manolescu@inria.fr
+URL :	http://pages.saclay.inria.fr/ioana.manolescu/
+		ioana.manolescu@inria.fr
+---------------------------------------------------------
+RDF schema construct > /// Weakest possible ontology
+Subproperty : 	Works with is a subproperty of knows.
+				AliceURI works with BobURI
+				infere => AliceURI knows BobURI
+
+Dommain	:		hasDrivingLicence domain Person
+Range:			hadDrivingLicence range drivinglicens

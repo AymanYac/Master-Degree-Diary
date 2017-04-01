@@ -1,0 +1,54 @@
+﻿Corrigés récemment consultés
+Recently seen solutions
+Session: ProceduralSem
+  SemanticLinking
+s(FVP,PS,TS) --> dp(FDP,PDP,TDP), vp(FVP,PVP,TVP), {    % determiner phrase + verb phrase
+    att(FVP, subj, dp(FDP)),
+    att(FDP, num, Num),     % checking for number agreement 
+    att(FVP, num, Num),        % between subject and verb
+    link(1, PVP, PDP, PS),
+    TS = s(TDP,TVP) }.
+
+vp(FV,PVP,TVP) --> v(FV,PV,TV), dp(FDP,PDP,TDP), { % transitive verb, eg. 'like'
+    att(FV, cpl, [dp(FDP)]),
+    link(2, PV,PDP,PVP),
+    TVP = vp(TV,TDP) }.
+  WorldConstraints
+talk(X,Y,_Z) :-
+    animate(X),
+    animate(Y),
+    !.
+  child('John').
+child('Pat').
+room(my_room).
+  SemanticAgreement2
+talk could require a feature human for its subject. 
+in could require a feature location for its complement. 
+These solutions are not realistic for two reasons.
+inflation of the number of features
+impossibility of nearly metaphorical expressions such as ‘a talking cat’ or the fear was in Mary.
+  n([gloss:daughter, num:sing],daughter(_,_),n(daughter)) --> [daughter].
+
+daughter('Lisa', 'Ann').
+  DitransitiveVerbs
+vp(FV,PVP,TVP) --> v(FV,PV,TV), pp(FPP,PPP,TPP), pp(FPP2,PPP2,TPP2), { % ditransitive verb, eg. 'talk'
+    att(FV, cpl, [pp(P1),pp(P2)]),
+    att(FPP, gloss, P1),
+    att(FPP2, gloss, P2),
+    link(2, PV,PPP,PV1),
+    link(3, PV1,PPP2,PVP),
+    TVP = vp(TV, TPP, TPP2) }.
+  SemanticAgreement
+s(FVP,PS,TS) --> dp(FDP,PDP,TDP), vp(FVP,PVP,TVP), {    % determiner phrase + verb phrase
+    att(FVP, subj, dp(FDP)),
+    att(FDP, num, Num),     % checking for number agreement 
+    att(FVP, num, Num),        % between subject and verb
+    att(FVP, anim, A),
+    att(FDP, anim, A),
+    link(_, PVP, PDP, PS),
+    TS = s(TDP,TVP) }.
+
+n([gloss:child, num:sing, anim:animate], child(_), n(child)) --> [child].
+
+n([gloss:room, num:sing, anim:inanimate], room(_), n(room)) --> [room]. 
+

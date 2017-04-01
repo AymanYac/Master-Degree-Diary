@@ -1,0 +1,95 @@
+﻿Corrigés récemment consultés
+Recently seen solutions
+Session: SyntacticParsing
+  SemanticFeatures
+s --> np(Sf), vp(Sf).
+np(Sf) --> det, n(Sf).
+vp(Sf) --> v(Sf, _).
+vp(Sn) --> v(Sn, Ed), np(Ed).
+
+n(sentient) --> [dog].
+n(sentient) --> [daughter].
+n(sentient) --> [son].
+n(sentient) --> [sister].
+n(sentient) --> [aunt].
+n(sentient) --> [neighbour].
+n(sentient) --> [cousin].
+n(edible_bar) --> [door].
+n(edible) --> [apple].
+v(sentient, _) --> [likes].
+v(sentient, edible) --> [eats].
+
+?- s([the, daughter, eats, the, door], []).
+false.
+
+?- s([the, daughter, eats, the, apple], []).
+true .
+The use of semantic features does not scale-up.
+words may have an indeterminate number of semantic properties (apple is edible, solid, red, heavy?, ...)
+nuances are not captured by features (difference between touch, hit, brush, graze...)
+entities may have contradictory properties (a person is sentient, but not when sleeping or dead)
+context has a significant impact on properties (a human being is edible from a lion’s perspective)
+metaphoric use are not possible when using features (she’s gonna eat him)
+
+
+
+  ParseurLoop
+The faulty rule is: 
+np --> np, pp. 
+Since Prolog proceeds in a top-down manner, the rule calls itself indefinitely. A way to suppress the problem consists in restoring the initial rule: 
+np --> det, n, pp. 
+This solution is not very aesthetic, as (1) there is a redundancy with np --> det, n. and (2) it introduces a ternary rule. One could introduce a new kind of phrase instead, called cnp (complement noun phrase). This solution is not satisfactory either from a linguistic point of view. An alternative way will be to change the parsing procedure.
+  NumberAgreement
+Modified rules: s --> np(Number), vp(Number).
+
+np(Number) --> det(Number), n(Number).
+
+vp(Number) --> v(Number). % Verb phrase, intransitive verb
+vp(Number) --> v(Number), np.        % Verb phrase, verb + complement: like X
+vp(Number) --> v(Number), pp.        % Verb phrase, verb + indirect complement : think of X 
+vp(Number) --> v(Number), np, pp.    % Verb phrase, verb + complement + indirect complement : give X to Y 
+vp(Number) --> v(Number), pp, pp.    % Verb phrase, verb + indirect complement + indirect complement : talk to X about Y
+
+n(singular) --> [dog].
+n(plural) --> [dogs].
+
+v(singular) --> [hates].
+v(plural) --> [hate].
+v(singular) --> [likes].
+v(plural) --> [like].
+One gets the following type of result: 
+?- s([the,dog,hates,her,aunt],[]).
+true .
+
+?- s([the,dogs,hates,her,aunt],[]).
+false. 
+    ?- s([the,dogs,hate,her,aunt],[]).     true .    
+  Generation
+Since the grammar is recursive, it can generate an infinity of sentences such as: 
+a dog hates the brother of the brother of the brother of the brother ...
+  Grammars
+
+Regular grammars can be expressed through regular expressions. They can be implemented using finite-state automata.
+Context-free grammars can be expressed using production rules that have one non-terminal in their left part. They can be implemented using push-down automata.
+See Noam Chomsky’s famous hierachy.
+  ArgumentStructure
+vp --> v(none).     
+vp --> v(transitive), np.     
+vp --> v(intransitive), pp.    
+vp --> v(ditransitive), np, pp. 
+vp --> v(diintransitive), pp, pp. 
+
+v(none) --> [sleeps].
+v(transitive) --> [likes].
+v(transitive) --> [eats].    % mary eats the apple
+v(none) --> [eats].            % mary eats (every day)
+v(intransitive) --> [talks].    % mary talks to peter
+v(none) --> [parle].        % mary talks (she is not mute)
+v(diintransitive) --> [parle].    % mary talks to peter about the weather
+v(ditransitive) --> [donne].    % mary gives him the book
+?- s([the, dog, talks, to, the, dog, about, the, dog], []).
+true .
+  NLP_BottomUpParser
+The program does no longer loop when it includes the rule: 
+    gn --> gn, gnp.
+

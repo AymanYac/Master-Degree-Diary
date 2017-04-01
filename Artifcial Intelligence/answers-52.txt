@@ -1,0 +1,20 @@
+﻿Corrigés récemment consultés
+Recently seen solutions
+Session: Simplicity
+  IntegerComplexity
+1000008 is quite naturally described as 1000000 + 8. If we find a concise way of coding arithmetic operators (e.g. by numbering them), then we can estimate the complexity as: C(1000008) = C(1000000) + C(′+′) + C(8), which amounts (using the above coding) to 4 + C(′+′) + 4. This means less than 11 bits if ‘+’ is one of the simplest operators (to be compared to log2(1000000) ≈ 20).
+  Compressibility1
+Only N–k bits are available to represent the compressed version of a sequence of N bits that is compressed by k bits. As a consequence, there can be only 2N–k such sequences. This makes a proportion of 2–k.
+  ChainRule1
+The introduction of s2 imposes a particular way of computing the complexity of s1: "compute s2 first, and then compute s1 using s2". This choice may be suboptimal, hence the inequality.
+  ChainRule2
+This relation is obtained from the preceding one by replacing s1 by s1 & s2 and s2 by s1. 
+Alternatively, one can see that computing s1 & s2 by starting with s1 is potentially suboptimal.
+  ConditionalComplexity
+C(1889) ≈ log2(1889) ≈ 11 bit. 
+Observing that 1889 = 2 × 3778, C(1889 | 3778) ≈ C(′division′) + 3. 
+Observing that 1889 = 1789 + 100, C(1889 | 1789) ≈ C(′+′) + 3.
+
+Haut du formulaire
+Bas du formulaire
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!ELEMENT cname (#PCDATA)>
+<!ELEMENT text (#PCDATA)>
+<!ATTLIST text date CDATA #REQUIRED>
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT assignedTo (#PCDATA)>
+<!ELEMENT contribution (cname+,text*,status?,assignedTo?)>
+<!ELEMENT contributors (contribution*)>

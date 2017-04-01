@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8">
+<contributors>
+	<contribution cname="DarkAngel80" cname="TryHarder">
+		<text date="12-09-2016">The necessary threshold is <20 & >10
+		<status>Approved<status>
+		</text>
+<contribution cname="HelloKitty" />
+<contribution cname="Anonymous">
+	<text date="13-09-2016">The revised text is here</text>
+	<text date="14-09-2016">The second revised text is here</text>
+	<status>Reviewed</status>
+	<assignedTo>HelloKitty</assignedTo>
+</contribution>

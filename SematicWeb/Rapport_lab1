@@ -1,0 +1,193 @@
+Added in Hornrule.java
+
+	public boolean inConditions(Variable v){
+		for(Variable clause : this.conditions){
+			if(clause.toString().equals(v.toString())) return true;
+		}
+		return false;
+	}
+
+	public boolean inConclusions(Variable v){
+		for(Variable clause : this.conclusions){
+			if(!clause.toString().equals(v.toString())) return true;
+		}
+		return false;
+	}
+
+Added in ReasoningForwardChaining.java in public FactBase forwardChaining(Formalism ruleBase, Formalism factBase) :
+
+		FactBase baseFaits = (FactBase) factBase;
+		HornRuleBase baseRegles =(HornRuleBase)ruleBase;
+		FactBase baseFaitIter = new FactBase();
+		int i = 1;
+		int preItSize,postItSize;
+		do{
+			Iterator<HornRule> baseReglesIter = baseRegles.getRules().iterator();
+			System.out.println("iteration "+i+": ");
+			baseFaitIter.setFact(baseFaits.getFact());
+			preItSize = baseFaitIter.getFact().size();
+			while(baseReglesIter.hasNext()) {
+				HornRule R = baseReglesIter.next();
+				if(eval(R,baseFaitIter)){
+					for(Variable clause: R.getConclusions()){
+						baseFaits.getFact().add(clause);
+					}
+					baseReglesIter.remove();
+					
+				}
+			}
+			i = i+1;
+			postItSize = baseFaits.getFact().size();
+		}while(preItSize!=postItSize);
+
+		/////////////////////////////////////////
+	public boolean match(Variable I, FactBase baseFaitIter){
+		nbMatches+=1;
+		for(Variable clause: baseFaitIter.getFact())
+			if(clause.toString().equals(I.toString())) return true;
+		return false;
+		
+	}
+	public boolean eval(HornRule R, FactBase baseFaitIter){
+		for(Variable fait:R.getConditions()){
+			boolean ismatch = match(fait,baseFaitIter);
+			if(!ismatch) return false;
+		}
+		return true;	
+	}
+
+	modified >
+	{
+		FactBase allInferredFacts = forwardChaining(ruleBase, factBase);
+		for(Variable fait : allInferredFacts.getFact()){
+			if(fait.toString().equals(query.toString()))
+			return true;
+		}
+		return false;
+	}
+	modified >
+	countNbMatches now returns the global protected nbMatches
+/****************************
+**********************/
+Reasoning backwardChaining
+
+	public boolean backwardChaining(Formalism ruleBase, Formalism factBase,
+			Formalism query) {
+		FactBase baseFaits = (FactBase)factBase;
+		HornRuleBase baseRegles = (HornRuleBase) ruleBase;
+		FactBase baseFaitIter = baseFaits;
+		Formalism queryIter = (Formalism) query;
+		
+		if(match(queryIter,baseFaitIter)) return true;
+		else {
+			for(HornRule regle: baseRegles.getRules()){
+				if(match(queryIter, regle.getConclusions())){
+					boolean def = true;
+					int i = 1;
+					while(def && i<=regle.getConditions().size()){
+						for(Variable cond : regle.getConditions()){
+							def = backwardChaining(baseRegles,baseFaitIter,cond);
+						}
+						i++;
+					}
+					if(def) return true;
+				}
+			}
+			return false;
+		}
+	}
+
+	//////////////////
+	private boolean match(Formalism queryIter, HashSet<Variable> ConcRegle) {
+		boolean b = ConcRegle.toString().contains(queryIter.toString());
+		return b;
+	}
+
+	private boolean match(Formalism queryIter, FactBase baseFaitIter) {
+		nbMatches++;
+		boolean b = baseFaitIter.getFact().toString().contains(queryIter.toString());
+		return b;
+	}
+
+/*************************************
+**************************************/
+Reasoning backwardChainingwithQuestion
+
+		FactBase baseFaits = (FactBase)factBase;
+		HornRuleBase baseRegles = (HornRuleBase) ruleBase;
+		FactBase baseFaitsIter = baseFaits;
+		Formalism queryIter = (Formalism) query;
+		if(match(queryIter,baseFaitsIter)) return true;
+		else {
+			ArrayList<HornRule> baseReglesConcluables = match(queryIter,baseRegles);
+			for(HornRule regle: baseReglesConcluables){
+				HashSet<Variable> condset = regle.getConditions();
+				Iterator<Variable> condsetIter = condset.iterator();
+				boolean drapeau = true;
+				while(drapeau && condsetIter.hasNext()){
+					Variable cond = condsetIter.next();
+					drapeau = entailment(baseRegles,baseFaitsIter,cond);
+				}
+				if(drapeau) return true;
+			}
+			if(user(queryIter,baseRegles)){
+				return interaction(queryIter);
+
+			}
+			else return false;
+		}
+		return false;
+	}
+	////////////
+	private ArrayList<HornRule> match(Formalism queryIter, HornRuleBase baseReglesIter) {
+		ArrayList<HornRule> reglesConcluables = new ArrayList<HornRule>();
+		Iterator<HornRule> regleIter = baseReglesIter.getRules().iterator();
+		HashSet<Variable> clausesDroites;
+		while(regleIter.hasNext()){
+			clausesDroites = regleIter.next().getConclusions();
+			for(Variable cd : clausesDroites){
+				drapeau = cd.toString().equals(queryIter.toString());
+				if(drapeau) reglesConcluables.add(R);
+			}
+		}
+		return reglesConcluables;
+	}
+
+	private boolean match(Formalism queryIter, FactBase regleFaitsIter) {
+		nbMatches++;
+		for(Variable fait: regleFaitsIter.getFact())
+			if(fait.toString().equals(queryIter.toString())) return true;
+		return false;
+	}
+
+
+	public boolean interaction(Formalism query) throws IOException {
+		boolean drapeau = true;
+		Scanner sc = new Scanner(System.in);  
+		System.out.println("True or False ? ");
+		String input = sc.next();
+		if(input.equals("True")){
+			drapeau = true;
+		}else if (input.equals("False")){
+			drapeau = false;
+		}
+		return drapeau;
+	}
+
+
+	public boolean user(Formalism queryIter, HornRuleBase baseReglesIter) {
+		Iterator<HornRule> regle = baseReglesIter.getRules().iterator();
+		HashSet<Variable> clauseDroites;
+		while(regle.hasNext()){
+			HornRule reg = regle.next();
+			clauseDroites = reg.getConclusions();
+			boolean drapeau = false;
+			for(Variable conc : clauseDroites){
+				drapeau = conc.toString().equals(queryIter.toString());
+				if(drapeau) return false;
+			}
+		}
+		return true;
+	}
+
+

@@ -1,0 +1,88 @@
+For starters, RGs are a strict subset of CFGs. While CFGs allow production rules of the type..
+Ni -> (Ni U Ti)* where Ni belongs to the non-terminal symbols, Pi the terminole ones, U is the..
+set intersection operation and (S)* is the kleen closure of the set S; RGs only allow of..
+linear production rules such as Ni -> (T1..Tn) Nj | Nj(T1..Tn). CFGs require a stack and thus use..
+push-down automata while finite-state machine are sufficient for RGs
+
+
+Because of the recursiveness of some set of rules (exp : np -> det,n,pp ; pp-> p,np) there can be infinetly many diffrent sentences
+
+np(Number) --> det(Number), n(Number).
+
+det(singular) --> [a].
+det(plural) --> [many].
+det(_) --> [the].
+
+n(singular) --> [dog].
+n(singular)--> [daughter].
+n(singular)--> [son].
+n(singular)--> [sister].
+n(singular)--> [aunt].
+n(singular)--> [neighbour].
+n(plural)--> [cousins].
+n(plural) --> [dogs].
+n(plural)--> [daughters].
+n(plural)--> [sons].
+n(plural)--> [sisters].
+n(plural)--> [aunts].
+n(plural)--> [neighbours].
+n(plural)--> [cousins].
+
+s(Number) --> np(Number), vp(Number).
+vp(Number) --> v(Number).           
+vp(Number) --> v(Number), np(_).		
+vp(Number) --> v(Number), pp.		
+vp(Number) --> v(Number), np(_), pp.	
+vp(Number) --> v(Number), pp, pp.	
+v(singular) --> [grumbles].
+v(singular) --> [likes].
+v(singular) --> [gives].
+v(singular) --> [talks].
+v(singular) --> [annoys].
+v(singular) --> [hates].
+v(singular) --> [cries].
+v(singular) -->[sleeps].
+v(plural) --> [grumble].
+v(plural) --> [like].
+v(plural) --> [give].
+v(plural) --> [talk].
+v(plural) --> [annoy].
+v(plural) --> [hate].
+v(plural) --> [cry].
+v(plural) -->[sleep].
+
+s(Number,Transitiveness) --> np(Number), vp(Number,Transitiveness).
+vp(Number,none) --> v(Number,none).           
+vp(Number,transitive) --> v(Number,transitive), np(_).		
+vp(Number,intransitive) --> v(Number,intransitive), pp.		
+vp(Number,intransitive) --> v(Number,intransitive), np(_), pp.	
+vp(Number,intransitive) --> v(Number,intransitive), pp, pp.	
+
+v(singular,none) -->[eats].
+v(singular,transitive) -->[eats].
+v(singular,none) --> [grumbles].
+v(singular,transitive) --> [likes].
+v(singular,intransitive) --> [likes].
+v(singular,transitive) --> [gives].
+v(singular,intransitive) --> [gives].
+v(singular,transitive) --> [talks].
+v(singular,intransitive) --> [talks].
+v(singular,transitive) --> [annoys].
+v(singular,transitive) --> [hates].
+v(singular,intransitive) --> [hates].
+v(singular,none) --> [cries].
+v(singular,none) -->[sleeps].
+v(plural,none) -->[eat].
+v(plural,transitive)-->[eat].
+v(plural,none) --> [grumble].
+v(plural,transitive) --> [like].
+v(plural,intransitive) --> [like].
+v(plural,transitive) --> [give].
+v(plural,intransitive) --> [give].
+v(plural,transitive) --> [talk].
+v(plural,intransitive) --> [talk].
+v(plural,transitive) --> [annoy].
+v(plural,transitive) --> [hate].
+v(plural,intransitive) --> [hate].
+v(plural,none) --> [cry].
+v(plural,none) -->[sleep].

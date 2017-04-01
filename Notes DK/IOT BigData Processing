@@ -1,0 +1,37 @@
+Prof Albert Bifet
+URL > albertbifet.com/dk-iot-big-data-processing-2016-2017
+EVENT > JDSEPARIS16
+
+Distributed GREP:
+-----------------
+define mapper:
+	for each word do:
+		if math(line,pattern)
+			emit(line,no)
+define
+	identity(line,no)
+________________
+Inverted Index
+--------------
+define mapper: (for each doc)
+	for each word do:
+		emit(word,doc_no)
+
+define grouper
+		eleminate_redundant(word,doc_no)
+define reducer
+		emit(word,docno1,docno2,..)	
+-------------------
+define mapper:
+		emit(a,listval)
+define reducer:
+		emit(a,sum(listval)/card(listval))
+
+---------------------------------------------
+!!!		MONOIDS as MapReduce Writing guides
+--------------------------------------------
+Cooccurence matrix:
+define mapper
+	for each word
+		emit(word,docno,occ)
+		

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE ContribLedger SYSTEM "tp.dtd">
+<contributors>
+	<contribution>
+		<cname>DarkAngel80</cname>
+		<cname>TryHarder</cname>
+		<text date="12-09-2016">The necessary threshold is 20 | 10</text>
+		<status>Approved</status>
+		</contribution>
+<contribution cname="HelloKitty"/>
+<contribution cname="Anonymous">
+	<text date="13-09-2016">The revised text is here</text>
+	<text date="14-09-2016">The second revised text is here</text>
+	<status>Reviewed</status>
+	<assignedTo>HelloKitty</assignedTo>
+</contribution>
+</contributors>

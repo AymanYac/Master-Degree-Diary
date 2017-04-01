@@ -1,0 +1,53 @@
+Lab2	Question World constraints
+animate([gloss:girl|_],_,_,_]
+animate([gloss:boy|_],_,_,_]
+talk(X,Y,_) :- animate(X),animate(Y).
+
+
+Lab 3	Question Aspect examples 
+Pierre a mangé du gâteau
+Pierre a mangé du gâteau en 2010
+Pierre a mangé du gâteau pendant une minute
+Pierre a mangé du gâteau pendant le spectacle
+Pierre a mangé le gâteau
+Pierre a mangé le gâteau en une minute
+Pierre a mangé le gâteau en 2010
+Pierre a mangé le gâteau pendant le spectacle
+Pierre a mangé
+Pierre a mangé en une minute
+Pierre a mangé en 2010
+Pierre a mangé pendant une minute
+Pierre a mangé pendant le spectacle
+Pierre a ronflé
+Pierre a ronflé en 2010
+Pierre a ronflé pendant une minute
+Pierre a ronflé pendant le spectacle
+Pierre aimait le gâteau
+Pierre aimait le gâteau en 2010
+
+		Question Telicity
+snore     ground 
+sneeze    figure 
+remove    figure 
+walk      ground 
+send      figure
+
+		Question Determination
+the exhibition    determined
+an exhibition     undetermined
+a day             undetermined
+that day          determined
+
+		Question Predication
+1. the snore keeps on during the entire show
+2. At some moment during the show, a snore will occure
+The difference lies in the show being considered a ground then for the snoring to match ground it has to be considered a lengthy event when in 2, the snoring is considered in contrast of not snoring (aberation) and has only to take place somewhere in the show duration.
+
+		Question Lexicon
+lexicon(circle, [synt:vp, vwp:f, im:draw_loop, dur:0.3 |_FS]).
+lexicon(draw, [synt:vp, vwp:g, im:draw_art, dur:3 |_FS]).
+lexicon(draw, [synt:vp, vwp:g, im:draw_sketch, dur:2 |_FS]).
+lexicon(sneeze, [synt:vp, vwp:f, im:sneeze, dur:0.1 |_FS]).
+lexicon(sleep [synt:vp, vwp:g, im:sleep, dur:4.5 |_FS]).
+lexicon(build [synt:vp, vwp:f, im:build_engineering, dur:6.5 |_FS]).
+lexicon(deduce, [synt:vp, vwp:f, im:sneeze, dur:0.5 |_FS]).

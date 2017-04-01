@@ -1,0 +1,16 @@
+Prof Albert Bifet
+URL > albertbifet.com
+
+Naive Bayes >
+			LAPLACE Correction,
+			Not to have 0's in numerator product nor denominator	=> num+1/Denom+#Classes
+
+:::::::::::::::::::::::APACHE FLINK::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Stream processing (Data artisan corp -see doc here !-)
+Motivation
+..........
+Real time / stream and in-memory
+works for batch and streaming jobs
+streaming jobs can be seen as microstreaming jobs with time-window settings
+		Dataflow : Google cloud API for stream processing
+					Open-sourced to run ontop of Spark and Flink

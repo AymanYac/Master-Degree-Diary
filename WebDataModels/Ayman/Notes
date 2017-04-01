@@ -1,0 +1,42 @@
+Concepts
+1/XPE is converted into an NFA (XPath NFA)
+2/The incoming XML stream is parsed by a SAX parser that generates a stream of
+	SAX events; this is input to the lazyDFA processor,which then evaluates the XPE.
+	The applications events are filteredSAX events plus Variable events.
+	During the evaluation, a DFA is lazily constructed from the NFA;
+	transitions are evaluated lazily, and only the needed edges and DFA states are constructed.
+3/The lazy DFA is constructed at run-time, on demand. Initially it has a single
+	state (the initial state), and whenever we attempt to make a transition into a
+	missing state we compute it, and update the transition. The hope is that only
+	a small set of the DFA states needs to be computed.
+4/Each state in the lazy DFA is represented by a set of
+	states from the NFA, which we call an NFA table. In the eager DFA the NFA
+	tables can be dropped after the DFA has been computed, but in the lazy DFA
+	they need to be kept, since we never really complete the construction of the
+	DFA.
+5/There are several important features of lazyDFA. To enhance
+performance, the DFA transition table is implemented as a hash algorithm;
+thus element/attribute transition lookup is efficiently processed. Its ideal cost is O(1)
+
+Methods:
+Converting XPath expression into an NFA, which was used in Tukwila [25]
+	In Fig. 5(b), the transitions labeled ∗ correspond to ∗ or
+	// in P ; there is one initial state; there is one terminal state for each variable
+	($X, $Y, . . . ); and there are ε-transitions (to separate the loops from the previous state)
+One can process an XML stream with a DFA very efficiently. It suffices to
+	maintain a pointer to the current DFA state, and a stack of DFA states. On
+	a startElement(e) event we push the current state on the stack, and replace
+	the state with the state reached by following the e transition 2 ;
+	on an endElement(e) we pop a state from the stack and set it as the current state.
+
+At any moment, the states stored in the stack are exactly those at
+	which the ancestors of the current node were processed, and at which one may
+	need to come back later when exploring subsequent children nodes of those
+	ancestors.
+If the current state has any variables associated to it, then for each
+	such variable $V we send a startVariable($V) (in the case of a startElement)
+	or endVariable($V) (in the case of a endElement) event to the application. If
+	either the current state or the new state we enter has sax f=true, then we
+	forward the SAX event to the application.
+No memory management is needed at run time (The stack is a static array) . Thus, each SAX event is
+	processed in O(1) time, since a transition lookup is implemented as a hash table lookup

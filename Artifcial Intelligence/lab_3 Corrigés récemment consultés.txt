@@ -1,0 +1,22 @@
+﻿Corrigés récemment consultés
+Recently seen solutions
+Session: Aspect
+  Lexicon
+lexicon(circle,[synt:n, im:circle|_]).
+lexicon(draw, [synt:vp, im:draw_activity, vwp:g, dur:2.5 |_FS]).
+lexicon(draw, [synt:v, im:draw, dur:1 |_FS]).
+  The sentence: 
+Mary will drink the glass_of_wine during one minute 
+can be considered semantically incorrect. 
+Note that sentences like Mary will snore in one minute can receive the interpretation: after one minute.
+  Predication
+1. she will (snore during the show)!
+2. she will (snore)! during the show
+In 1., the snoring lasts the whole show. 
+In 2., a snoring event occurs at some moment during the show. 
+In 1., ‘snore’ is a g that must match with the show considered as a g as well. 
+In 2., ‘snore’ looses its temporality and becomes an f that can only be matched to a virtual ‘temporal slice’ of the show.
+  FaultyExample2
+The problem comes from the fact that ‘snore’ is declared with a typical duration of 1 (= 10 sec.). This duration cannot be matched with the duration of a show. If you change the duration to 3 (= 1000 sec.), the durative interpretation is given by the program. A more general fixing would be to consider, not only typical durations, but intervals or, alternatively, typical values + standard deviations. 
+
+

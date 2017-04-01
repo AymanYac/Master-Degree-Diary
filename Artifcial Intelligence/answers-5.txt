@@ -1,0 +1,122 @@
+﻿Mes réponses récentes
+My recent answers
+Session: Simplicity
+IntegerComplexity
+C(1000008)= log2(1000008) – 1 = 18.9315801 ≈ 19
+Compressibility1
+- The number of sequences compressed by k bits is: 
+1 + 2 + 2^2 +...+ 2^(N-k) = 2^N - k 
+
+- The proportion of sequences that are compressible by k bits: 2^-k
+ConditionalComplexity
+- C(1889) <= log2(1889) <= 11 
+
+- C(1889|3778) <= log2(1889) + c1  
+                 
+- C(1889|1789) <= log2(1889) + c2
+ChainRule1
+We can use the example of the previous question and test it on the theorem:  
+           
+eg. (1) C(s2) + C(1889|s2) <= C(s2) + log2(1889) + c1 <= 11 + C(s2) +  c1   (having C(s2) > 0 and c1 > 0) 
+
+    (2) C(1889) <= log2(1889) ≈ 11 (From previous question) 
+
+(1) and (2) ==>  log2(1889) <= 11 + C(s2) +  c1  ==>  C(1889) <= C(s2) + C(1889|s2)  
+
+By consequence,  C(s1) <= C(s2) + C(s1 | s2) is proved.
+ChainRule2
+We can use the previous formula C(s1) <= C(s2) + C(s1 | s2) by changing s1 with (s1 & s2) and s2 with s1 and we find the result below:  
+C(s1 & s2) <= C(s1) + C(s1 | s2) 
+Thus, we can deduce that if C(s1 & s2) <= C(s1) + C(s1 | s2) then it is obvious that C(s1 & s2) <= C(s1) + C(s2 | s1)
+WebComplexity
+A. rabbit: 
+   1. Google: 
+      Frequency: 305 × 10^6 hits vs a maximum given by Google 25,27 × 10^9   
+      Probability: P =  1.206 % = 0.01206 
+      Complexity: K(s) = log(1/P) = 1.918 
+
+   2. Yahoo:  
+      Frequency: 12,9 × 10^6 hits vs a maximum given by Yahoo 2 910 065 408  
+      Probability:  P = 0.443 % = 0.00443 
+      Complexity: K(s) = 2.353 
+
+B. book 
+   1. Google: 
+      Frequency: 4080 × 10^6 hits vs a maximum given by Google 25,27 × 10^9 
+      Probablité: P = 16.14 % = 0.1614 
+      Complexity: K(s) = 0.792 
+
+   2. Yahoo:  
+      Frequency: 1 480 × 10^6 hits vs a maximum given by Yahoo 2 910 065 408 
+      Probablité: P = 0.508 = 50,85 % 
+      Complexity: K(s) = 0.294 
+
+C. calligraphy 
+   1. Google: 
+      Frequency: 170 × 10^6 hits vs a maximum given by Google 25,27 × 10^9 
+      Probablité: P = 0.00672 = 0.672 % 
+      Complexity: K(s) = 2.17 
+   2. Yahoo:  
+      Frequency:  8 080 000 vs a maximum given by Yahoo 2 910 065 408   
+      Probablité: P = 0.00277 = 0.277% 
+      Complexity: K(s) = 2.557 
+
+D. echinococcosis 
+   1. Google: 
+      Frequency: 420 000 vs a maximum given by Google 25,27 × 10^9 
+      Probablité: P = 0.00166 %  
+      Complexity: K(s)= 4.78 
+   2. Yahoo:  
+      Frequency:   115 000 vs a maximum given by Yahoo 2 910 065 408   
+      Probablité: P = 0.0039 % 
+      Complexity: K(s)= 4.403
+GoogleDistance
+I choosed Google as a search engine:  
+We use the frequency of the world 'the' as 25 270 × 10^6 
+---- 
+1. ’Laurel’ and ‘Hardy’:   
+'Laurel': 139 × 10^6 hits ==> P('Laurel') = (139 × 10^6) / (25 270 × 10^6) = 0.55% ==> K('Laurel') =7.5 
+'Hardy': 181 × 10^6 hits ==> P('Hardy') = (181 × 10^6) / (25 270 × 10^6) = 0.716 % ==> K('Hardy') = 7.125 
+==> max(K('Laurel'), K('Hardy')) = K('Laurel') = 7.5 
+'Laurel + Hardy' = 10,3 × 10^6  
+P('Laurel'|'Hardy') = P('Laurel + Hardy')/P('Hardy') = 10,3/181 = 0.057 ==> K('Laurel'|'Hardy')= log(1/0.057) = 4.13 
+P('Hardy'|'Laurel') = P('Laurel + Hardy')/P('Laurel') = 10,3/139 = 0.074 ==> K('Hardy'|'Laurel') = log(1/0.074) = 3.75 
+==> max(K('Laurel'|'Hardy'), K('Hardy'|'Laurel')) = K('Laurel'|'Hardy') = 4.13 
+As a consequence:  
+NGD('Laurel', 'Hardy') = max(K('Laurel'|'Hardy'), K('Hardy'|'Laurel')) / max(K('Laurel'), K('Hardy')) = 4.13/7.5 = 0.55 
+---- 
+2. ’complex’ and ‘simple’ 
+'complex': 833 × 10^6 ==> P('complex') = 833/25 270 = 0.033 = 3.3 % ==> K('complex') = log2(1/P('complex')) = 4.92 
+'simple': 2 880 × 10^6 ==> P('simple') = 2 880/25 270 = 0.114 = 11.4 % ==> K('simple') = log2(1/P('simple')) = 3.13  
+==> max(K('complex'), K('simple')) = K('complex') = 4.92 
+'simple + complex': 501 × 10^6  
+P('simple'|'complex') = P('simple + complex')/P('complex') = 501/833 = 0.60 ==>  K('simple'|'complex')= log2(1/P('simple'|'complex') = 0.73 
+P('complex'|'simple') = P('simple + complex')/P('simple') = 501/2880 = 0.17 ==>  K('complex'|'simple')= log2(1/P('complex'|'simple') = 2.55 
+==> max(K('complex'|'simple'), K('simple'|'complex')) = K('complex'|'simple')= 2.55 
+NGD('complex', 'simple') = max(K('complex'|'simple'), K('simple'|'complex')) / max(K('complex'), K('simple')) 
+==> NGD('complex', 'simple') = 2.55/4.92 = 0.52  
+---- 
+3. ’artificial’ and ‘intelligence’ 
+'artificial': 337 × 10^6 ==> P('artificial') = 337/25 270 = 0.013 ==> K('artificial') = 6.26 
+'intelligence': 396 × 10^6 ==> P('i
+Haut du formulaire
+
+Voir les corrigés de mes réponses récentes
+See solutions for my recent answers 
+Bas du formulaire
+
+Haut du formulaire
+Bas du formulaire
+
+
+
+
+
+
+
+
+
+
+
+
+
