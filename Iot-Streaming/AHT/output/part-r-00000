@@ -1,0 +1,5 @@
+buy	org.apache.hadoop.io.MapWritable@1
+comeon	org.apache.hadoop.io.MapWritable@1
+hello	org.apache.hadoop.io.MapWritable@79df174
+please	org.apache.hadoop.io.MapWritable@1
+world	org.apache.hadoop.io.MapWritable@1
