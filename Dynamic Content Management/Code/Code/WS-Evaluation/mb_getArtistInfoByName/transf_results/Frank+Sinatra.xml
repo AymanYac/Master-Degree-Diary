@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><RESULT xmlns:mb="http://musicbrainz.org/ns/mmd-1.0#">
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Frank Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">197450cd-0124-4164-b723-3c22dd16494d</ITEM>
+  <ITEM ANGIE-VAR="?beginDate">1915-12-12</ITEM>
+  <ITEM ANGIE-VAR="?endDate">1998-05-14</ITEM></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Frank Sinatra, Jr.</ITEM>
+  <ITEM ANGIE-VAR="?artistId">37de3091-32c5-449b-a67e-2e3cd0f0beb7</ITEM>
+  <ITEM ANGIE-VAR="?beginDate">1944-01-10</ITEM>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">a16b9b0a-1580-4fbe-817e-06b5fcdff684</ITEM>
+  <ITEM ANGIE-VAR="?beginDate">1975</ITEM>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Nancy Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">c2e36518-9c3b-4dcb-82ad-a3fc7fe99c67</ITEM>
+  <ITEM ANGIE-VAR="?beginDate">1940-06-08</ITEM>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Ralph Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">2af413ce-ea12-497c-8bd7-21cae6f00fd2</ITEM>
+  <ITEM ANGIE-VAR="?beginDate"/>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Rank Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">ca6ed94d-64f8-4ab8-b679-187d99ae9e06</ITEM>
+  <ITEM ANGIE-VAR="?beginDate"/>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Anthony Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">9cda87df-c0a8-49ee-9729-22d90299d99e</ITEM>
+  <ITEM ANGIE-VAR="?beginDate"/>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Sem Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">4dd83cb0-6f18-4426-8109-22ea406f3e24</ITEM>
+  <ITEM ANGIE-VAR="?beginDate"/>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Tina Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">9e7e148c-f105-4b76-825c-3a7b5643fe10</ITEM>
+  <ITEM ANGIE-VAR="?beginDate">1948-06-20</ITEM>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Frango Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">ddcfd721-445e-485c-9b00-8f321ce2e9d8</ITEM>
+  <ITEM ANGIE-VAR="?beginDate"/>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Funk Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">8c726a83-a324-4613-a1d5-5c16f45d5013</ITEM>
+  <ITEM ANGIE-VAR="?beginDate"/>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Barbara Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">0f57db27-823a-41a5-ba56-77aa5cfd8f7d</ITEM>
+  <ITEM ANGIE-VAR="?beginDate">1927-10-16</ITEM>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Spence Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">e795926c-cbcd-498e-b63e-7db0b3df01a3</ITEM>
+  <ITEM ANGIE-VAR="?beginDate"/>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Ray Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">9ce6e847-2574-4c58-8686-85c1d45d74ff</ITEM>
+  <ITEM ANGIE-VAR="?beginDate"/>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Brenk Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">2d7f82d3-7c68-4314-b791-7e98d084912b</ITEM>
+  <ITEM ANGIE-VAR="?beginDate">1979-11-03</ITEM>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistName">Spencer Sinatra</ITEM>
+  <ITEM ANGIE-VAR="?artistId">9d8577b2-2d85-4e4f-aad1-e6e792d28546</ITEM>
+  <ITEM ANGIE-VAR="?beginDate"/>
+  <ITEM ANGIE-VAR="?endDate"/></RECORD></RESULT>
