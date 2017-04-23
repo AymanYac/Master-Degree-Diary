@@ -1,0 +1,137 @@
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem{prop}{Proposition}
+\newtheorem{Definition}{Definition}
+\newtheorem{Proof}{Proof}
+\newtheorem{property}{Property}
+\newtheorem{subproblem}{Sub-Problem}
+\newtheorem{examp}{Example}
+%\newtheorem{algorithm}{Algorithm}
+\newtheorem{Rule}{Rule}
+\newtheorem{condition}{Condition}
+
+
+\newcommand{\Hybrid}[1]{{\small{\textsf{Hybrid}}}}
+\newcommand{\ANGIE}[1]{{\small{\textsf{ANGIE}}}}
+\newcommand{\THOMAS}[1]{{\small{\textsf{RDF-3X}}}}
+\newcommand{\YAGO}[1]{{\small{\textsf{YAGO}}}}
+
+
+\newcommand{\blind}[1]{}
+
+\newcommand{\Ex}{{\em \textbf{Example. }}}
+\newcommand{\s}[1]{{\small{\textsf{#1}}}}
+\newcommand{\SQ}[1]{{\small{\textsf{#1}}}}
+\newcommand{\W}[1]{{\em {#1}}}
+
+
+
+
+
+\newcommand\alkis[1]{{\color{blue} $\parallel$\textbf{Alkis}: #1 $\parallel$}}
+\newcommand\serge[1]{{\color{red} $\parallel$\textbf{Serge}: #1 $\parallel$}}
+\newcommand\nico[1]{{\color{blue}    #1   }}
+
+
+
+\newcommand\calD{\ensuremath{\mathcal D}}
+\newcommand\calB{\ensuremath{\mathcal B}}
+\newcommand\calP{\ensuremath{\mathcal P}}
+\newcommand\calI{\ensuremath{\mathcal I}}
+\newcommand\calL{\ensuremath{\mathit{Label}}}
+\newcommand{\cut}{\ensuremath{{\it cut}}}
+\newcommand\locatepeers{{\tt locateXML}}
+
+%\newcommand\ABF{\ensuremath{BF_{\alpha}}}
+\newcommand\ABF{{\it ABF}}
+%\newcommand\DBF{\ensuremath{BF_{\delta}}}
+\newcommand\DBF{{\it DBF}}
+\newcommand\anc{\ensuremath{ \backslash\backslash}}
+\newcommand\stitle[1]{{\vpar\noindent{\bf #1}}}
+
+\newcommand\vpar{{\vspace*{0.5em}}}
+
+\newcommand{\csbbox}{\vrule height7pt width4pt depth1pt}
+
+\newcommand{\fp}{\mathit{fp}}
+
+\newtheorem{defn}{Definition}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}{Lemma}[section]
+
+\newtheorem{CSEXAMPLE}{Example}[section]
+\newenvironment{csexample}{\begin{CSEXAMPLE} \hspace{-.85em} {\bf :} \rm}%
+                            {\end{CSEXAMPLE}}
+
+\newenvironment{remark}{\stitle{Remark.}}{}
+
+\newcommand{\csxam}{\begin{csexample}}
+\newcommand{\csexam}{\csbbox\end{csexample}}
+
+\newcommand{\csprf}{\noindent{\bf Proof:}}
+\newcommand{\cseprf}{\csbbox}
+
+\newcounter{ccc}
+\newcommand{\bcc}{\setcounter{ccc}{1}\theccc.}
+\newcommand{\icc}{\addtocounter{ccc}{1}\theccc.}
+
+\newcommand\utitle[1]{{\vpar\noindent{\underline{#1}}}}
+\newcommand\sutitle[1]{{\vpar\noindent{\textbf{\underline{#1}}}}}
+\newcommand\bstitle[1]{{\noindent{\bf #1}}}
+
+\newcommand\queryplan[3][@R=8pt @C=2pt]{{\small \begin{minipage}[th]{#2}\xymatrix
+    #1 {#3}\end{minipage}}}
+\newcommand\querytree\queryplan
+
+\newcommand\notes[1]{{\bf $\|$~{#1}~$\|$}}
+
+\newcommand\given{\ensuremath{~|~}}
+
+\newcommand\eat[1]{}
+
+\newcommand\minarg{\ensuremath{\operatornamewithlimits{minarg}}}
+\newenvironment{pseudocode}{\begin{tabbing}llllll\=llll\=llll\=llll\=llll\=llll\kill\small}{\end{tabbing}}
+
+\newcommand{\myhrule}{\rule[.5pt]{\hsize}{.5pt}}
+\newcommand\smalltt[1]{\textsf{\small{#1}}}
+%% Section spacing
+%\newcommand{\oespace}{\vspace*{-1.8em}}
+%\newcommand{\osspace}{\vspace*{-1.6em}}
+%\newcommand{\ofspace}{\vspace*{-1.4em}}
+%\newcommand{\otspace}{\vspace*{-1.2em}}
+%\newcommand{\ospace}{\vspace*{-1em}}
+%\newcommand{\espace}{\vspace*{-2mm}}
+%\newcommand{\sspace}{\vspace*{-.6em}}
+%\newcommand{\fspace}{\vspace*{-.4em}}
+%\newcommand{\tspace}{\vspace*{-.2em}}
+
+
+\newcommand{\pfspace}{\vspace*{.4em}}
+\newcommand{\ptspace}{\vspace*{.2em}}
+\newcommand{\paraspace}{\pfspace}
+
+%%%%%%%%%%%% Fabian's macros
+
+%\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+%\renewcommand{\algorithmiccomment}[1]{$~~~~$ //#1}
+\newcommand{\ignore}[1]{}
+% Fabian: I think we should use a uniform appearance of all entities
+% in the text. It has proven useful to treat relations, entities and facts
+% alike. Feel free to change the layout as you like it.
+\newcommand{\entity}[1]{{\textit{#1}}}
+%\newcommand{\var}[1]{{\textit{\$#1}}}
+\newcommand{\newWord}[1]{\emph{#1}}
+
+\newcounter{figureCounter}
+\newcommand{\ffigure}[4]{% \ffigure[th]{label}{title}{imagecommand}{vskip}
+\ \\[-0.0cm]
+  \refstepcounter{figureCounter} \label{#1}
+  {\centering #3\\[-#4]}
+  {\centering \bf Figure \ref{#1}: #2\\[0.2cm]}
+}
+\newcommand{\para}[1]{\noindent{\textbf{#1.}}}
+
+
+\newcommand{\hls}{{\small $<$}}
+\newcommand{\hg}{{\small $>$}}

@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+\usepackage{a4}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm,  right=2.5cm]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage{latexsym}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{latexsym}
+
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{listings}
+\definecolor{darkblue}{rgb}{0,0,.5}
+\definecolor{lightblue}{rgb}{0,0,1}
+\usepackage{tikz}
+\usepackage{mdframed}
+
+\renewcommand{\paragraph}[1]{\textbf{#1.}}
+%\newcommand{\ignore}[1]{}
+\newcommand{\link}[1]{\url{#1}}
+\newcommand{\extlink}[1]{\href{#1}{\textbf{$~\triangleright$}}}
+\newcommand{\todo}[1]{{\color{red}TODO:#1}}
+\newcommand{\comment}[1]{{\color{blue}#1}}
+\newcommand{\versailles}[1]{}
+\newcommand{\lip}[1]{}
+
+\title{\vspace{0cm}  Report Requirements }
+\date{}
+
+\newcounter{exercise}
+\newcommand{\createExercise}{
+\stepcounter{exercise}
+\textbf{{\\ Exercise \arabic{exercise}.}}
+}
+
+\lstdefinelanguage{XML}
+{
+  basicstyle=\ttfamily\scriptsize,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=1,
+  morestring=[b]",
+  moredelim=[s][\bfseries\color{darkblue}]{<}{\ },
+  moredelim=[s][\bfseries\color{darkblue}]{</}{>},
+  moredelim=[l][\bfseries\color{darkblue}]{/>},
+  moredelim=[l][\bfseries\color{darkblue}]{>},
+  morecomment=[s]{<!--}{-->},
+  morecomment=[s]{<?}{?>},
+  morecomment=[s]{<!--}{-->},
+  commentstyle=\color{cyan},
+  stringstyle=\color{blue},
+  identifierstyle=\color{red}
+}
+
+\lstdefinelanguage{Java}
+{
+  language=C,
+  basicstyle=\ttfamily\scriptsize,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=1,
+  morestring=[b]",
+  moredelim=[s][\bfseries\color{darkblue}]{<}{\ },
+  moredelim=[s][\bfseries\color{darkblue}]{</}{>},
+  moredelim=[l][\bfseries\color{darkblue}]{/>},
+  moredelim=[l][\bfseries\color{darkblue}]{>},
+  morecomment=[s]{<!--}{-->},
+  morecomment=[s]{<?}{?>},
+  morecomment=[s]{<!--}{-->},
+  commentstyle=\color{grey},
+  stringstyle=\color{cyan},
+  identifierstyle=\color{darkblue}
+}
+
+\newenvironment{myenv}[1]
+  {\mdfsetup{
+    frametitle={{\tiny \colorbox{white}{\space#1\space}}},
+    innertopmargin=0pt,
+    frametitleaboveskip=-\ht\strutbox,
+    frametitlealignment=\center
+    }
+  \begin{mdframed}%
+  }
+  {\end{mdframed}}
+
+\begin{document}
+\input{environs}
+\pagestyle{empty}
+\vspace{2cm}
+\maketitle
+
+ The reports will be evaluated based on, and should conform to the following criteria: 
+\begin{enumerate}
+\item The lenght: 3-5 pages in the format of this document (a4, font size 11pt,  margins:  top=2.5cm, bottom=2.5cm, left=2.5cm,  right=2.5cm). The archive can be downloaded from the Web directory of the course. 
+\item Should be self-contained (no need to read the paper to understand the report). 
+\item Should present a running example (extra points if other than the one given in the paper).
+\item Should discuss shortcomings of the approach.
+\item Should be readable (this includes also: clarity, clear images, the size of the font text in the figures should be comparable to the one of the document, the figures should be referenced and explained in the text).
+\item Should not copy text from the paper (only the definitions can be reproduced). 
+\item Should clearly state the contribution (how it advances the existant work; if the paper claims a contribution that you estimate as minor, you should not cite it)
+\end{enumerate}
+
+You most certainly can't describe everything from the paper. So you should only extract what is important!\\
+
+The first 5 points above apply also to the document describing your implementation of the project.
+
+
+
+\bibliographystyle{plain}
+\bibliography{bib}
+\end{document}
+
+
