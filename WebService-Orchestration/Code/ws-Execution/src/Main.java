@@ -23,7 +23,8 @@ public class Main {
 		System.out.println("!"+fileWithTransfResults);
 		ArrayList<String[]>  listOfTupleResult= ParseResultsForWS.showResults(fileWithTransfResults, ws); //won't work because ws.headvars = null
 		*/
-		String query = "mb_getArtistInfoByName(\"Jane Birkin\", ?id, ?b, ?e)#mb_getReleasesByArtistId(?id,\"B0006IGGOK\", ?title, ?date)#mb_getReleasesByArtist(?id,\"B0006IGGOK\", ?title, ?date)";
+		String query = "mb_getArtistInfoByName(\"Jane Birkin\", ?id, ?b, ?e)#mb_getReleasesByArtistId(?id,\"B0006IGGOK\", ?title, ?date)#mb_getReleasesByArtist(?id,?asin, ?title, ?date)";
+		//\"B0006IGGOK\"
 		ExecutionEngine engine = new ExecutionEngine();
 		engine.process(query);
 		System.exit(0);

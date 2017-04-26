@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 import javax.xml.stream.XMLEventFactory;
@@ -18,12 +19,12 @@ import javax.xml.stream.events.XMLEvent;
 
 public class XmlMerger {
 
-	public String merge(String fileWithCallResult, String... headers ) throws FileNotFoundException, XMLStreamException {
-		 XMLEventWriter eventWriter;
+	public String merge(HashSet<String> targetFiles, String... headers ) throws FileNotFoundException, XMLStreamException {
+		 	XMLEventWriter eventWriter;
 		    XMLEventFactory eventFactory;
 		    XMLOutputFactory outputFactory = XMLOutputFactory.newInstance();
 		    XMLInputFactory inputFactory = XMLInputFactory.newInstance();
-		    String MergeFilePath = new File(fileWithCallResult).getParentFile().getAbsolutePath()+"/JOIN.xml";
+		    String MergeFilePath = new File(targetFiles.iterator().next()).getParentFile().getAbsolutePath()+"/JOIN.xml";
 		    eventWriter = outputFactory.createXMLEventWriter(new FileOutputStream(MergeFilePath));
 		    eventFactory = XMLEventFactory.newInstance();
 		    XMLEvent newLine = eventFactory.createDTD("\n");                
@@ -31,15 +32,11 @@ public class XmlMerger {
 		    StartDocument startDocument = eventFactory.createStartDocument();
 		    eventWriter.add(startDocument);
 		    eventWriter.add(newLine);
-
-		    List<String> filenames = new ArrayList<>();
-		    for(File child:new File(fileWithCallResult).getParentFile().listFiles()){
-		    	filenames.add(child.getAbsolutePath());
-		    }
+		    
 		    //System.out.println(xmlfiles);
 		    //String[] filenames = new String[]{"test1.xml", "test2.xml","test3.xml"};
 		    Boolean first = true;
-		    for(String filename:filenames){
+		    for(String filename:targetFiles){
 		    	if(filename.equals(MergeFilePath)) {continue;} //we don't want the target file to be merged with itself
 		    	
 		    		XMLEventReader test = inputFactory.createXMLEventReader(filename,
