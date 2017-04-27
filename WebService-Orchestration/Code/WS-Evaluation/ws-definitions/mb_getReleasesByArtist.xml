@@ -9,7 +9,7 @@
     <headVariables>
         <variable type="inout" name="?artistid"/>
         <variable type="inout" name="?asin"/>
-        <variable type="output" name="?title"/>
+        <variable type="inout" name="?title"/>
         <variable type="output" name="?type"/>
         <variable type="output" name="?date"/>
     </headVariables>
@@ -25,9 +25,12 @@
 		<part type="input" variable="?artistid" class="singer" separator="+" />
 		<part type="constant" value="?asin="/>
 		<part type="input" variable="?asin" class="uk" separator="+" />
+		<part type="constant" value="?title="/>
+		<part type="input" variable="?title" class="uk2" separator="+" />
 	</call>
 	
 	<transformation file="mb_getReleasesByArtistId.xsl"/>
+	<partialmerge container_tags="metadata,release-list"/>
 
 </ws>
 

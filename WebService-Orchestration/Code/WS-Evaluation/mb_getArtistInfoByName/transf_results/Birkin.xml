@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><RESULT xmlns:mb="http://musicbrainz.org/ns/mmd-1.0#">
+<RECORD>
+  <ITEM ANGIE-VAR="?artistname">Guy Birkin</ITEM>
+  <ITEM ANGIE-VAR="?artistid">276d9029-5a65-47d6-821e-50ea766ad190</ITEM>
+  <ITEM ANGIE-VAR="?begindate"/>
+  <ITEM ANGIE-VAR="?enddate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistname">Birkin Tree</ITEM>
+  <ITEM ANGIE-VAR="?artistid">64307c4c-99bf-46a1-898f-d1e82edd2211</ITEM>
+  <ITEM ANGIE-VAR="?begindate">1982</ITEM>
+  <ITEM ANGIE-VAR="?enddate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistname">Kris Birkin</ITEM>
+  <ITEM ANGIE-VAR="?artistid">454d2099-c205-4a8c-8b81-5e9899367a39</ITEM>
+  <ITEM ANGIE-VAR="?begindate"/>
+  <ITEM ANGIE-VAR="?enddate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistname">Anno Birkin</ITEM>
+  <ITEM ANGIE-VAR="?artistid">15d13a2a-faff-46f5-b8f6-69c418617d1a</ITEM>
+  <ITEM ANGIE-VAR="?begindate"/>
+  <ITEM ANGIE-VAR="?enddate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistname">Baby Birkin</ITEM>
+  <ITEM ANGIE-VAR="?artistid">bc439d7c-d08b-4c8a-8b19-e23ee6e78c14</ITEM>
+  <ITEM ANGIE-VAR="?begindate"/>
+  <ITEM ANGIE-VAR="?enddate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistname">Jane Birkin</ITEM>
+  <ITEM ANGIE-VAR="?artistid">e4f92153-dd32-4c81-98bd-e0ad9a1b9672</ITEM>
+  <ITEM ANGIE-VAR="?begindate">1946-12-14</ITEM>
+  <ITEM ANGIE-VAR="?enddate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistname">Richard J Birkin</ITEM>
+  <ITEM ANGIE-VAR="?artistid">6a101714-ad55-4c80-88fd-b3fdae61e010</ITEM>
+  <ITEM ANGIE-VAR="?begindate"/>
+  <ITEM ANGIE-VAR="?enddate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistname">Serge Gainsbourg</ITEM>
+  <ITEM ANGIE-VAR="?artistid">b21ef19b-c6aa-4775-90d3-3cc3e067ce6d</ITEM>
+  <ITEM ANGIE-VAR="?begindate">1928-04-02</ITEM>
+  <ITEM ANGIE-VAR="?enddate">1991-03-02</ITEM></RECORD></RESULT>

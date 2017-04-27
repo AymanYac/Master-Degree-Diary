@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://musicbrainz.org/ns/mmd-1.0#" xmlns:ext="http://musicbrainz.org/ns/ext-1.0#">
+<release-list offset="0" count="0">
+<release ext:score="100" id="3a10ad57-2690-406b-8745-7ab6407faa2c" type="Album Official">
+<title>
+Skrillex and Diplo Present Jack Ü
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B00ZR9CCXM
+</asin>
+<artist id="8a40cfa4-e190-4133-a9af-e668c7d5f6f3">
+<name>
+Jack Ü
+</name>
+<sort-name>
+Jack Ü
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2015-08-28" country="US" format="12&quot; Vinyl" barcode="075678669576" catalog-number="549172-1">
+<label id="97e08824-a090-45bf-bde0-44186daddfd8">
+<name>
+Mad Decent
+</name>
+</label>
+</event>
+<event date="2015-08-28" country="US" format="12&quot; Vinyl" barcode="075678669576" catalog-number="549172-1">
+<label id="f22210ca-3b01-48aa-815d-d7bae567d9d8">
+<name>
+OWSLA
+</name>
+</label>
+</event>
+</release-event-list>
+<disc-list count="0">
+</disc-list>
+<track-list count="20">
+</track-list>
+</release>
+<release ext:score="100" id="96f383e1-c112-460c-b932-b25c9640b604" type="Album Official">
+<title>
+Skrillex and Diplo Present Jack Ü
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B00V5RMUPA
+</asin>
+<artist id="8a40cfa4-e190-4133-a9af-e668c7d5f6f3">
+<name>
+Jack Ü
+</name>
+<sort-name>
+Jack Ü
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2015-06-02" country="US" format="CD" barcode="075678669668" catalog-number="549172-2">
+<label id="97e08824-a090-45bf-bde0-44186daddfd8">
+<name>
+Mad Decent
+</name>
+</label>
+</event>
+<event date="2015-06-02" country="US" format="CD" barcode="075678669668" catalog-number="549172-2">
+<label id="f22210ca-3b01-48aa-815d-d7bae567d9d8">
+<name>
+OWSLA
+</name>
+</label>
+</event>
+</release-event-list>
+<disc-list count="0">
+</disc-list>
+<track-list count="10">
+</track-list>
+</release>
+<release ext:score="100" id="6e954769-d26b-46b2-bc93-33caedf3e90c" type="EP Official">
+<title>
+Bangarang
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B005FLX1HS
+</asin>
+<artist id="ae002c5d-aac6-490b-a39a-30aa9e2edf2b">
+<name>
+Skrillex
+</name>
+<sort-name>
+Skrillex
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2012-01-24" country="XE" format="CD" barcode="075678825767" catalog-number="7567-88257-6">
+<label id="50c384a2-0b44-401b-b893-8181173339c7">
+<name>
+Atlantic
+</name>
+</label>
+</event>
+<event date="2012-01-24" country="XE" format="CD" barcode="075678825767" catalog-number="7567-88257-6">
+<label id="04a12848-9667-4173-93c6-011cb1c3eabd">
+<name>
+Big Beat
+</name>
+</label>
+</event>
+<event date="2012-01-24" country="XE" format="CD" barcode="075678825767" catalog-number="7567-88257-6">
+<label id="f22210ca-3b01-48aa-815d-d7bae567d9d8">
+<name>
+OWSLA
+</name>
+</label>
+</event>
+</release-event-list>
+<disc-list count="0">
+</disc-list>
+<track-list count="7">
+</track-list>
+</release>
+<release ext:score="100" id="fde88ca9-a04d-436f-b721-651db6464b14" type="EP Official">
+<title>
+Bangarang
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B005FLX1HS
+</asin>
+<artist id="ae002c5d-aac6-490b-a39a-30aa9e2edf2b">
+<name>
+Skrillex
+</name>
+<sort-name>
+Skrillex
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2012-01-24" country="US" format="CD" barcode="075678825767" catalog-number="528521-2">
+<label id="50c384a2-0b44-401b-b893-8181173339c7">
+<name>
+Atlantic
+</name>
+</label>
+</event>
+<event date="2012-01-24" country="US" format="CD" barcode="075678825767">
+<label id="04a12848-9667-4173-93c6-011cb1c3eabd">
+<name>
+Big Beat
+</name>
+</label>
+</event>
+<event date="2012-01-24" country="US" format="CD" barcode="075678825767">
+<label id="f22210ca-3b01-48aa-815d-d7bae567d9d8">
+<name>
+OWSLA
+</name>
+</label>
+</event>
+</release-event-list>
+<disc-list count="1">
+</disc-list>
+<track-list count="7">
+</track-list>
+</release>
+<release ext:score="100" id="3575b3b7-3e90-4a31-ad1a-4fd171cd4037" type="EP Official">
+<title>
+Make It Bun Dem: After Hours EP
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B0092W4KGC
+</asin>
+<artist id="ae002c5d-aac6-490b-a39a-30aa9e2edf2b">
+<name>
+Skrillex
+</name>
+<sort-name>
+Skrillex
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2012-08-28" country="US" format="Digital Media" barcode="075679958839" catalog-number="075679958839">
+<label id="f22210ca-3b01-48aa-815d-d7bae567d9d8">
+<name>
+OWSLA
+</name>
+</label>
+</event>
+</release-event-list>
+<disc-list count="0">
+</disc-list>
+<track-list count="7">
+</track-list>
+</release>
+<release ext:score="100" id="e32b67d6-bbd0-42a5-bca9-9bd33e927d74" type="EP Official">
+<title>
+Scary Monsters and Nice Sprites
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B004GGM444
+</asin>
+<artist id="ae002c5d-aac6-490b-a39a-30aa9e2edf2b">
+<name>
+Skrillex
+</name>
+<sort-name>
+Skrillex
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2010-10-22" country="XW" format="Digital Media" catalog-number="075679970930">
+<label id="7537b81d-1721-468f-ad2c-66b369432069">
+<name>
+mau5trap
+</name>
+</label>
+</event>
+</release-event-list>
+<disc-list count="0">
+</disc-list>
+<track-list count="9">
+</track-list>
+</release>
+<release ext:score="100" id="3575b3b7-3e90-4a31-ad1a-4fd171cd4037" type="EP Official">
+<title>
+Make It Bun Dem: After Hours EP
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B0092W4KGC
+</asin>
+<artist id="ae002c5d-aac6-490b-a39a-30aa9e2edf2b">
+<name>
+Skrillex
+</name>
+<sort-name>
+Skrillex
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2012-08-28" country="US" format="Digital Media" barcode="075679958839" catalog-number="075679958839">
+<label id="f22210ca-3b01-48aa-815d-d7bae567d9d8">
+<name>
+OWSLA
+</name>
+</label>
+</event>
+</release-event-list>
+<disc-list count="0">
+</disc-list>
+<track-list count="7">
+</track-list>
+</release>
+<release ext:score="100" id="6b3c13cb-5fee-485b-acef-72dc0ae617e3" type="Album Official">
+<title>
+Skrillex and Diplo Present Jack Ü
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B00U0AHRJW
+</asin>
+<artist id="8a40cfa4-e190-4133-a9af-e668c7d5f6f3">
+<name>
+Jack Ü
+</name>
+<sort-name>
+Jack Ü
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2015-02-27" country="XW" format="Digital Media" barcode="075679927354">
+<label id="97e08824-a090-45bf-bde0-44186daddfd8">
+<name>
+Mad Decent
+</name>
+</label>
+</event>
+<event date="2015-02-27" country="XW" format="Digital Media" barcode="075679927354">
+<label id="f22210ca-3b01-48aa-815d-d7bae567d9d8">
+<name>
+OWSLA
+</name>
+</label>
+</event>
+</release-event-list>
+<disc-list count="0">
+</disc-list>
+<track-list count="10">
+</track-list>
+</release>
+<release ext:score="100" id="4913e4b2-bec4-48fc-8010-8a139de05452" type="EP Official">
+<title>
+Narcissistic Cannibal: The Remixes
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B0076HLVKS
+</asin>
+<artist id="ac865b2e-bba8-4f5a-8756-dd40d5e39f46">
+<name>
+Korn
+</name>
+<sort-name>
+Korn
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2012-02-17" country="XW" format="Digital Media" barcode="016861362034">
+<label id="5899271b-a77a-4081-93a9-0bd05b9b4180">
+<name>
+Roadrunner Records
+</name>
+</label>
+</event>
+</release-event-list>
+<disc-list count="0">
+</disc-list>
+<track-list count="7">
+</track-list>
+</release>
+<release ext:score="100" id="28de27d3-016a-4675-8f84-9f4199ef7f8f" type="EP Official">
+<title>
+More Monsters and Sprites
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B0055M9WBQ
+</asin>
+<artist id="ae002c5d-aac6-490b-a39a-30aa9e2edf2b">
+<name>
+Skrillex
+</name>
+<sort-name>
+Skrillex
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2011-06-07" country="US" format="Digital Media" barcode="075679968098" catalog-number="075679968098">
+<label id="04a12848-9667-4173-93c6-011cb1c3eabd">
+<name>
+Big Beat
+</name>
+</label>
+</event>
+</release-event-list>
+<disc-list count="0">
+</disc-list>
+<track-list count="7">
+</track-list>
+</release>
+<release ext:score="100" id="c103d867-0a9c-404b-8e79-21dcfccd9a9f" type="Single Official">
+<title>
+Make It Bun Dem
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B007ZHFXBM
+</asin>
+<artist id="ae002c5d-aac6-490b-a39a-30aa9e2edf2b">
+<name>
+Skrillex
+</name>
+<sort-name>
+Skrillex
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2012-05-01" country="US" format="Digital Media">
+<label id="04a12848-9667-4173-93c6-011cb1c3eabd">
+<name>
+Big Beat
+</name>
+</label>
+</event>
+<event date="2012-05-01" country="US" format="Digital Media">
+<label id="f22210ca-3b01-48aa-815d-d7bae567d9d8">
+<name>
+OWSLA
+</name>
+</label>
+</event>
+</release-event-list>
+<disc-list count="0">
+</disc-list>
+<track-list count="1">
+</track-list>
+</release>
+<release ext:score="100" id="8aea6d0f-b0a3-4125-a29e-1ba8daa2e7ac" type="Single Official">
+<title>
+Get Up!
+</title>
+<text-representation language="ENG" script="Latn">
+</text-representation>
+<asin>
+B004YPCUBO
+</asin>
+<artist id="ac865b2e-bba8-4f5a-8756-dd40d5e39f46">
+<name>
+Korn
+</name>
+<sort-name>
+Korn
+</sort-name>
+</artist>
+<release-event-list>
+<event date="2011-05-06" country="US" format="Digital Media">
+</event>
+</release-event-list>
+<disc-list count="0">
+</disc-list>
+<track-list count="1">
+</track-list>
+</release>
+</release-list>
+</metadata>

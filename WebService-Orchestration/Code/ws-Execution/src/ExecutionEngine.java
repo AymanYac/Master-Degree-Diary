@@ -15,6 +15,7 @@ public class ExecutionEngine {
 	TreeMap<String,HashMap<WebService,List<String>>> BoundMaps = new TreeMap <String,HashMap<WebService,List<String>>>(); //will contain bound Vars -> WS for joins of future ws's
 	public ArrayList<String[]> incrementalPartialResults = new ArrayList<String[]>();
 	List<WebService> wss = new ArrayList<>();
+	HashSet<String> targetFiles = new HashSet<String>(); 
 
 	public void process(String query) throws Exception {
 		String[] wsstring = query.split("#");
@@ -60,6 +61,7 @@ public class ExecutionEngine {
 							ArrayList<String[]>  JoinlistOfTupleResult= ParseResultsForWS.showResults(JoinfileWithTransfResults, JoinWS);
 							ArrayList<String> JoinKey = new ArrayList<String>(); //We extract the bound variable to be used in current ws call
 							for(String [] tuple:JoinlistOfTupleResult){
+								System.out.println(String.join(",", tuple));
 								if(JoinfileWithTransfResults.matches(".*JOIN\\.xml")){
 									JoinKey.add(tuple[i]);
 								}else{
@@ -75,12 +77,11 @@ public class ExecutionEngine {
 				}
 			String MergedFileWithCallResult=null;
 			if(!readyToCallWs){
-				String partialFileWithCallResult=null;
+				targetFiles.clear();
 				String [] JoinKeysArray = JoinKeys.keySet().toArray(new String[0]);
-				HashSet<String> targetFiles = new HashSet<String>(); 
-				for(String row:JoinKeys.get(JoinKeysArray[0])){
-					partialFileWithCallResult = makeWSCall(ws,row,0,JoinKeysArray,JoinKeys);
-					targetFiles.add(partialFileWithCallResult);
+				int start_index =0;
+				for(String row:JoinKeys.get(JoinKeysArray[start_index])){
+					makeWSCall(ws,row,start_index,JoinKeysArray,JoinKeys);
 				}
 				
 				XmlMerger merger = new XmlMerger();
@@ -93,27 +94,44 @@ public class ExecutionEngine {
 			joinPartial(MergedlistOfTupleResult,ws);
 			//System.out.println(String.join(",",incrementalPartialResults.get(0)));
 			}
-			
-		System.out.println(":::::::::::::Results:::::::::::::");
+		System.out.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");	
+		System.out.println("::::RESULTS::::FOR::::"+query+":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+		System.out.println("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+		HashSet<String> unique_columns = new HashSet<String>();
+		HashSet<Integer> unique_index = new HashSet<Integer>();
+		for(int col_index=0;col_index<incrementalPartialResults.size();col_index++){
+			if(!unique_columns.contains(incrementalPartialResults.get(col_index)[0])){
+				unique_columns.add(incrementalPartialResults.get(col_index)[0]);
+				unique_index.add(col_index);
+			}
+		}
 		for(int row_index=0;row_index<incrementalPartialResults.get(0).length;row_index++){
 			for(int col_index=0;col_index<incrementalPartialResults.size();col_index++){
-				System.out.print(incrementalPartialResults.get(col_index)[row_index]+"\t");
+				if(unique_index.contains(col_index)){
+					System.out.printf("%-38.38s",incrementalPartialResults.get(col_index)[row_index]);
+				}else{
+					continue;
+				}
 		}
 			System.out.println("");
 		}
 	}
 
-	private String makeWSCall(WebService ws, String row, int index, String[] joinKeysArray, LinkedHashMap<String, ArrayList<String>> joinKeys) {
+	private void makeWSCall(WebService ws, String row, int index, String[] joinKeysArray, LinkedHashMap<String, ArrayList<String>> joinKeys) throws InterruptedException {
 		if(index+1<joinKeysArray.length){
 			for(String row2:joinKeys.get(joinKeysArray[index+1])){
-				return makeWSCall(ws,row+","+row2,index+1,joinKeysArray,joinKeys);
+				makeWSCall(ws,row+","+row2,index+1,joinKeysArray,joinKeys);
 			}
 		}else{
-			String [] newInputs = row.split(",");
-			return ws.getCallResult(false,false,newInputs);
+			if(row.contains(",,")){ //one field is missing for call
+				
+			}else{
+				String [] newInputs = row.split(",");
+				targetFiles.add(ws.getCallResult(false,false,newInputs));
+			}
+			
 			
 		}
-		return null; //Syntax sugar
 		
 	}
 
@@ -163,10 +181,6 @@ public class ExecutionEngine {
 					}
 					
 					valid_records = joinMatch(0,row_range_search,join_column_idx,join_heads_idx,MergedlistOfTupleResult,i);
-					
-					for(ArrayList<String> row:valid_records){
-						//if(!row.isEmpty()) System.out.println(String.join(",", row));
-					}
 					
 					if(valid_records != null){
 						emptyResult=false;

@@ -11,6 +11,7 @@
                  <RECORD>
                      <xsl:text>&#10; &#32;</xsl:text>  <ITEM ANGIE-VAR='?artistid'><xsl:value-of select="mb:artist/@id"/></ITEM>
                      <xsl:text>&#10; &#32;</xsl:text>  <ITEM ANGIE-VAR='?asin'><xsl:value-of select="mb:asin"/></ITEM>
+                     <xsl:text>&#10; &#32;</xsl:text>  <ITEM ANGIE-VAR='?releaseid'><xsl:value-of select="@id"/></ITEM>
                      <xsl:text>&#10; &#32;</xsl:text>  <ITEM ANGIE-VAR='?title'><xsl:value-of select="mb:title"/></ITEM>
                      <xsl:text>&#10; &#32;</xsl:text>  <ITEM ANGIE-VAR='?type'><xsl:value-of select="@type"/></ITEM>
                      <xsl:text>&#10; &#32;</xsl:text>  <ITEM ANGIE-VAR='?date'><xsl:value-of select="mb:release-event-list/mb:event/@date"/></ITEM>

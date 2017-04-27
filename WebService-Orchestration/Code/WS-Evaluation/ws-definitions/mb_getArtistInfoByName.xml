@@ -25,6 +25,7 @@
 	</call>
 	
 	<transformation file="mb_getArtistInfoByName.xsl"/>
+	<partialmerge container_tags="metadata,artist-list"/>
 
 </ws>
 

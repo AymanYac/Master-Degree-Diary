@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><RESULT xmlns:mb="http://musicbrainz.org/ns/mmd-1.0#">
+<RECORD>
+  <ITEM ANGIE-VAR="?artistname">Skrillex</ITEM>
+  <ITEM ANGIE-VAR="?artistid">ae002c5d-aac6-490b-a39a-30aa9e2edf2b</ITEM>
+  <ITEM ANGIE-VAR="?begindate">1988-01-15</ITEM>
+  <ITEM ANGIE-VAR="?enddate"/></RECORD>
+<RECORD>
+  <ITEM ANGIE-VAR="?artistname">Jack Ü</ITEM>
+  <ITEM ANGIE-VAR="?artistid">8a40cfa4-e190-4133-a9af-e668c7d5f6f3</ITEM>
+  <ITEM ANGIE-VAR="?begindate">2013</ITEM>
+  <ITEM ANGIE-VAR="?enddate"/></RECORD></RESULT>

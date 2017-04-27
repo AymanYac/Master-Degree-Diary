@@ -76,8 +76,9 @@ public class WebService {
 	/**
 	 * @param inputs
 	 * @return the file where the call result is stored; returns null if some error occurs 
+	 * @throws InterruptedException 
 	 */
-	public String getCallResult(boolean overwrite,boolean seek_join,String... inputs){
+	public String getCallResult(boolean overwrite,boolean seek_join,String... inputs) throws InterruptedException{
 		String JoinfileWithCallResult=Settings.getDirForCallResults(this.name)+"JOIN.xml";
 		String fileWithCallResult=Settings.getDirForCallResults(this.name)+Formating.getFileNameForInputs(inputs);
 		
@@ -100,6 +101,7 @@ public class WebService {
 		String URL=getURLForCallWithInputs(inputs);
 		System.out.println("Requesting URL > "+URL);
 		System.out.println(fileWithCallResult);
+		Thread.sleep(700);
 		String confirmationFileWithResult=downloadCallResults(URL, fileWithCallResult);	
 		return confirmationFileWithResult;
 
