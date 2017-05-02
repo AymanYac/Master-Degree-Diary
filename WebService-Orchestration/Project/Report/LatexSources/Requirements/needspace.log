@@ -1,0 +1,22 @@
+This is TeX, Version 3.14159265 (TeX Live 2015/Debian) (preloaded format=tex 2016.8.24)  27 APR 2017 20:40
+**needspace.ins
+(./needspace.ins (./needspace.tex
+! Undefined control sequence.
+l.14 \RequirePackage
+                    {filecontents}
+? 
+! Undefined control sequence.
+l.15 \begin
+           {filecontents*}{needspace.sty}
+? 
+! Interruption.
+<to be read again> 
+                   {
+l.15 \begin{
+            filecontents*}{needspace.sty}
+? 
+! Undefined control sequence.
+l.17 \NeedsTeXFormat
+                    {LaTeX2e}
+? X
+No pages of output.
